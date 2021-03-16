@@ -6,7 +6,7 @@ let owl = ["owlena", "seer", "waves", "moon", "gem", "hammy"];
   createCanvas(600, 600);
   background(220);
 
-  owl[2] = "owlena eyes";
+  owl[1] = "owlena eyes";
   console.log(owl);
 
 
