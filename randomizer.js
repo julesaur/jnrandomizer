@@ -8,7 +8,7 @@ let owl = [];
 
   owl[1] = "owlena eyes";
 
-  console.log(owl);
+  console.log("initial array is" + owl);
 
 
 }
