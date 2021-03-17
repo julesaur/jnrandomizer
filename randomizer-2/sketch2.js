@@ -58,7 +58,8 @@ let owl = [{
         // this displays random name and splices it out of array
         background(random(212, 180, 209));
         randomIndex = int(random(owl.length));
-        text(owl[randomIndex].name + "'s theme color is " + owl[randomIndex].color, 50, 50);
+        text(`${owl[randomIndex].name}'s theme color is ${owl[randomIndex].color}`, 50, 50);
+        //text(owl[randomIndex].name + "'s theme color is " + owl[randomIndex].color, 50, 50);
         owl.splice(randomIndex, 1);
       } else {
         background(random(212, 180, 209));
