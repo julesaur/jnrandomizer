@@ -7,7 +7,7 @@ let owl = [{
     name: "cube",
     color: "pink"
     }, {
-    name: "marquise",
+    name: "pointed oval",
     color: "clear"
     }, {
     name: "sphere",
@@ -25,29 +25,53 @@ let owl = [{
     let avo = [];
     let imageCounter = 0;
     let button;
+    let cnv;
+
 
 
     function preload(){
       for (let i = 0; i <=6; i++){
         avo[i] = loadImage(`assets/avo_${i}.jpg`);
       }
+      song = loadSound('assets/whoosh.mp3');
+
     }
 
     function setup() {
-      createCanvas(600, 600);
-      background(223,166,164);
-      textSize(24);
+      cnv = createCanvas(600, 600);
+      song.loop();
+      cnv.parent("#canvasDiv");
+      c1 = color(144,166,160);
+      c2 = color(243,210,204);
+      setGradient(c1, c2);
+      textSize(32);
       imageMode(CENTER);
       frameRate(8);
-      textFont("'Molle', cursive");
-      text("How to See Shapes Aesthetically", 50, 50);
-
-      button = createButton("click to see shape");
+      textFont("'Cutive Mono', monospace;");
+      text("How to See Shapes Aesthetically", 80, 250);
+      button = select("#randButton");
       button.mousePressed(buttonPressed);
+      button.class("randomizerButton");
+      button2 = select("#restart");
+      button2.class("restart");
 
      }
 
+     function setGradient(c1, c2) {
+  // noprotect
+    noFill();
+    for (var y = 0; y < height; y++) {
+    var inter = map(y, 0, height, 0, 1);
+    var c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(0, y, width, y);
+  }
+   }
+
     function draw() {
+      /////////////////////shape//////////////////////
+      ellipse(mouseX, mouseY, 30, 30);
+      ///////////////////////////////////////////////
 
       if(animating == true){
         clear();
@@ -73,11 +97,13 @@ let owl = [{
         clear();
         randomIndex = int(random(owl.length));
         image(random(avo), width/2, height/2);
-        text(`${owl[randomIndex].color} ${owl[randomIndex].name}`, width/2, height-50);
+        text(`${owl[randomIndex].color} ${owl[randomIndex].name}`, 170, height-20);
         owl.splice(randomIndex, 1);
       } else {
-        background(random(212, 180, 209));
-        text("nothing left!", 50, 50)
+        c1 = color(243,210,204);
+        c2 = color(144,166,160);
+        setGradient(c1, c2);
+        text("End of Lesson!", 80, 250)
       }
     }
 
