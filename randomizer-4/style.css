@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Cutive Mono', monospace;
+  background-image: url("gradientjn.jpg");
 
 }
 
@@ -21,6 +22,8 @@ canvas {
   padding: 20px;
   background-color: #EBCEC8;
   transition: 0.3s;
+  margin: 0 auto;
+  display:block;
 
 
 }
@@ -35,11 +38,23 @@ canvas {
   padding: 20px;
   background-color: #90A6A0;
   transition: 0.3s;
-   margin: 0 auto;
+  margin: 0 auto;
+  display:block;
+
 
 
 }
 .restart:hover {
   background-color: #a52a2a;
   color: white;
+}
+
+.myDiv {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+
+
+
 }
